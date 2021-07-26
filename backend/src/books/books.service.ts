@@ -13,4 +13,12 @@ export class BooksService {
 		})
 		return await this.booksRepository.save(newBook)
 	}
+
+	async findByTitle(title: string) {
+		return await this.booksRepository.findOne({ title })
+	}
+
+	async findAll() {
+		return await this.booksRepository.find()
+	}
 }
