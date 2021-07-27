@@ -12,7 +12,7 @@ export class BooksController {
 	}
 
 	@Get()
-	async find() {
+	async findAll() {
 		return this.bookService.findAll()
 	}
 
