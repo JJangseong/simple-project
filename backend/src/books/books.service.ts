@@ -1,10 +1,17 @@
-import { Injectable } from '@nestjs/common'
-import { BooksRepository } from './books.repository'
+import { Injectable, Logger } from '@nestjs/common'
 import { CreateBookDto } from './dto/create-book.dto'
+import { InjectRepository } from '@nestjs/typeorm'
+import { Repository } from 'typeorm'
+import { BookEntity } from './entities/book.entity'
 
 @Injectable()
 export class BooksService {
-	constructor(private readonly booksRepository: BooksRepository) {}
+	private static readonly logger = new Logger(BooksService.name)
+
+	constructor(
+		@InjectRepository(BookEntity)
+		private readonly booksRepository: Repository<BookEntity>,
+	) {}
 
 	async create(book: CreateBookDto) {
 		const newBook = this.booksRepository.create({

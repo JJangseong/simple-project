@@ -5,6 +5,10 @@
   "username": "postgres",
   "password": "password",
   "database": "simple",
-  "entities": ["dist/**/**.entity{.ts,.js}"],
-  "synchronize": true
+  "entities": [
+    "dist/**/**.entity{.ts,.js}"
+  ],
+  "synchronize": true,
+  "logging": false,
+  "charset": "utf8mb4_unicode_ci"
 }

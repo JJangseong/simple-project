@@ -1,4 +1,5 @@
 import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm'
+import { CreateBookDto } from '../dto/create-book.dto'
 
 @Entity('book')
 export class BookEntity {
@@ -16,4 +17,8 @@ export class BookEntity {
 
 	@UpdateDateColumn({ name: 'updated_at' })
 	updatedAt: Date
+
+	constructor(dto?: CreateBookDto) {
+		return Object.assign(this, { ...dto })
+	}
 }
