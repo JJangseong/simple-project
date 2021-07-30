@@ -6,7 +6,7 @@ import { BooksRepository } from './books.repository'
 import { Repository } from 'typeorm'
 
 const MockRepository = () => ({
-	save: jest.fn(),
+	save: jest.fn().mockImplementation(dto => dto),
 	find: jest.fn(),
 	findOne: jest.fn(),
 	softDelete: jest.fn(),
@@ -22,9 +22,10 @@ describe('BooksService', () => {
 		const module: TestingModule = await Test.createTestingModule({
 			providers: [
 				BooksService,
+				BooksRepository,
 				{
 					provide: getRepositoryToken(BookEntity),
-					useValue: MockRepository(),
+					useValue: { MockRepository },
 				},
 			],
 		}).compile()
