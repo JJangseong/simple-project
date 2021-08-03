@@ -1,6 +1,5 @@
-package com.simple.mappers;
+package com.simple.backend.mappers;
 
-import com.simple.backend.mappers.ExampleMapper;
 import com.simple.backend.models.example.Example;
 import com.simple.backend.models.example.ExampleDto;
 import org.junit.jupiter.api.Test;

@@ -1,4 +1,4 @@
-package com.simple.controllers.v1.example;
+package com.simple.backend.example;
 
 import com.simple.backend.models.example.ExampleDto;
 import org.junit.jupiter.api.Test;

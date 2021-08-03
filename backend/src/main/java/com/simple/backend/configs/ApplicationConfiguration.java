@@ -14,5 +14,5 @@ import org.springframework.context.annotation.Configuration;
 })
 public class ApplicationConfiguration {
     static final String COMPONENT_SCAN_PATH = "com.simple.configs.components";
-    static final String MAPPER_SCAN_PATH = "com.simple.mappers";
+    static final String MAPPER_SCAN_PATH = "com.simple.backend.mappers";
 }
