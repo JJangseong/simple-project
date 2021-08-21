@@ -26,9 +26,8 @@ public class Example {
     private String content;
 
     @CreationTimestamp
-    @Column(updatable = false)
-    private Timestamp createdDate;
+    private Timestamp createdAt;
 
     @UpdateTimestamp
-    private Timestamp lastModifiedDate;
+    private Timestamp updatedAt;
 }
