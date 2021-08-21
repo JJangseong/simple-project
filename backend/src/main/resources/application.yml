@@ -29,8 +29,8 @@ spring:
   datasource:
     driver-class-name: org.postgresql.Driver
     hikari:
-      username: qtw
-      password: qtwelqlqhdksdptlsrudTmwk&&7
+      username: simple
+      password: simple!@#
       maximum-pool-size: 5
       data-source-properties:
         cachePrepStmts: true
