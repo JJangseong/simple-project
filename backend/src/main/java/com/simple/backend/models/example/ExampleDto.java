@@ -23,10 +23,4 @@ public class ExampleDto {
     @NotNull
     private String content;
 
-    @Null
-    private OffsetDateTime createdDate;
-
-    @Null
-    private OffsetDateTime lastModifiedDate;
-
 }
