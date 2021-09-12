@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components/native'
 import { FlatList } from 'react-native'
+import HomeHeader from 'components/HomeHeader'
 
 export type HomeProps = {}
 
@@ -18,24 +19,27 @@ function Home({}: HomeProps) {
 	}
 
 	return (
-		<Container>
-			<Text>Home</Text>
-			<FlatList
-				style={{
-					backgroundColor: '#ff0000',
-				}}
-				data={DATA}
-				renderItem={({ item }) => {
-					return <Text>{item.content}</Text>
-				}}
-				ListHeaderComponent={() => {
-					return renderTitle()
-				}}
-				ListFooterComponent={() => {
-					return renderTitle()
-				}}
-			/>
-		</Container>
+		<>
+			<HomeHeader />
+			<Container>
+				<Text>Home</Text>
+				<FlatList
+					style={{
+						backgroundColor: '#ff0000',
+					}}
+					data={DATA}
+					renderItem={({ item }) => {
+						return <Text>{item.content}</Text>
+					}}
+					ListHeaderComponent={() => {
+						return renderTitle()
+					}}
+					ListFooterComponent={() => {
+						return renderTitle()
+					}}
+				/>
+			</Container>
+		</>
 	)
 }
 

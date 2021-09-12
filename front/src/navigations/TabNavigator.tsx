@@ -9,7 +9,11 @@ export type TabNavigatorProps = {}
 
 function TabNavigator({}: TabNavigatorProps) {
 	return (
-		<Tab.Navigator>
+		<Tab.Navigator
+			screenOptions={{
+				headerShown: false,
+			}}
+		>
 			<Tab.Screen name="Home" component={HomeNavigator} />
 			<Tab.Screen name="Search" component={Search} />
 			<Tab.Screen name="Search1" component={Search} />
