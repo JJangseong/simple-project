@@ -17,6 +17,7 @@ module.exports = {
 			navigations: path.resolve(__dirname, 'src/navigations'),
 			pages: path.resolve(__dirname, 'src/pages'),
 			utils: path.resolve(__dirname, 'src/utils'),
+			styles: path.resolve(__dirname, 'src/styles'),
 		},
 	},
 	transformer: {
