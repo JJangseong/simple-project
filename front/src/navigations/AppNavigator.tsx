@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { Text } from 'react-native'
 import TabNavigator from './TabNavigator'
 import StackNavigator from './StackNavigator'
 
