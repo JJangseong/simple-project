@@ -49,7 +49,7 @@ spring:
       ddl-auto: update
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.MariaDBDialect
+        dialect: org.hibernate.dialect.PostgreSQL10Dialect
         format_sql: true
         temp:
           use_jdbc_metadata_defaults: false
