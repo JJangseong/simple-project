@@ -5,6 +5,13 @@
 docker-compose up --build
 ```
 
+### db
+```
+# run
+cd backend/database; docker-compose up --build
+```
+
+
 yml 서버에 맞게 실행 필요
 
 ## 프론트엔드
