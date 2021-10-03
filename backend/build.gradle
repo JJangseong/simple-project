@@ -1,49 +1,92 @@
-plugins {
-    id 'org.springframework.boot' version '2.5.2'
-    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
-    id 'java'
-    id 'org.graalvm.buildtools.native' version '0.9.1'
-}
+buildscript {
+    ext {
+        springBootVersion = '2.5.2'
+    }
+    repositories {
+        mavenCentral()
+    }
 
-group = 'com.simple'
-version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '16'
-
-configurations {
-    compileOnly {
-        extendsFrom annotationProcessor
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath "io.spring.gradle:dependency-management-plugin:0.6.0.RELEASE"
     }
 }
 
-repositories {
-    maven { url 'https://repo.spring.io/release' }
-    mavenCentral()
-}
 
-dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter-data-jpa:2.5.4'
-    implementation 'org.springframework.boot:spring-boot-starter-web:2.5.4'
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'io.spring.dependency-management'
+    apply plugin: 'org.springframework.boot'
 
-    compileOnly 'org.projectlombok:lombok:1.18.20'
-    annotationProcessor 'org.projectlombok:lombok:1.18.20'
+    sourceCompatibility = '16'
 
-    compileOnly 'org.mapstruct:mapstruct:1.4.2.Final'
-    annotationProcessor 'org.mapstruct:mapstruct-processor:1.4.2.Final'
+    configurations {
+        compileOnly {
+            extendsFrom annotationProcessor
+        }
+    }
+
+    repositories {
+        maven { url 'https://repo.spring.io/release' }
+        mavenCentral()
+    }
+
+    dependencies {
+        implementation 'org.springframework.boot:spring-boot-starter-data-jpa:2.5.4'
+        implementation 'org.springframework.boot:spring-boot-starter-web:2.5.4'
+
+        compileOnly 'org.projectlombok:lombok:1.18.20'
+        annotationProcessor 'org.projectlombok:lombok:1.18.20'
+
+        compileOnly 'org.mapstruct:mapstruct:1.4.2.Final'
+        annotationProcessor 'org.mapstruct:mapstruct-processor:1.4.2.Final'
 
 //    developmentOnly 'org.springframework.boot:spring-boot-devtools'
-    runtimeOnly 'org.postgresql:postgresql:42.2.23.jre7'
+        runtimeOnly 'org.postgresql:postgresql:42.2.23.jre7'
 
-    testImplementation 'org.springframework.boot:spring-boot-starter-test:2.5.4'
+        testImplementation 'org.springframework.boot:spring-boot-starter-test:2.5.4'
 
-    // https://mvnrepository.com/artifact/javax.validation/validation-api
-    implementation group: 'javax.validation', name: 'validation-api', version: '2.0.1.Final'
+        // https://mvnrepository.com/artifact/javax.validation/validation-api
+        implementation group: 'javax.validation', name: 'validation-api', version: '2.0.1.Final'
+    }
+
+    test {
+        useJUnitPlatform()
+    }
+
+    bootBuildImage {
+        builder = 'paketobuildpacks/builder:tiny'
+        environment = ['BP_NATIVE_IMAGE': 'true']
+    }
 }
 
-test {
-    useJUnitPlatform()
+project(':module-common') {
+    dependencies {
+    }
 }
 
-bootBuildImage {
-    builder = 'paketobuildpacks/builder:tiny'
-    environment = ['BP_NATIVE_IMAGE': 'true']
+project(':module-main') {
+    dependencies {
+        implementation project(':module-common')
+    }
 }
+
+project(':module-mail') {
+    dependencies {
+        implementation project(':module-common')
+    }
+}
+
+project(':module-stomp') {
+    dependencies {
+        implementation project(':module-common')
+        implementation "org.springframework.boot:spring-boot-starter-websocket"
+    }
+}
+
+project(':module-file') {
+    dependencies {
+        implementation project(':module-common')
+    }
+}
+

@@ -1,4 +1,4 @@
-package com.simple.models.code;
+package com.simple.common.models.code;
 
 import org.hibernate.annotations.CreationTimestamp;
 import lombok.*;

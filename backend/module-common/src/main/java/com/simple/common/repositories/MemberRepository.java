@@ -1,6 +1,6 @@
-package com.simple.repositories;
+package com.simple.common.repositories;
 
-import com.simple.models.member.Member;
+import com.simple.common.models.member.Member;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**

@@ -1,4 +1,4 @@
-package com.simple.configs;
+package com.simple.common.configs;
 
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
@@ -13,6 +13,6 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @EntityScan(basePackages = {JpaConfiguration.ENTITY_SCAN_PATH})
 @EnableJpaRepositories(basePackages = {JpaConfiguration.RDS_DOMAIN_PACKAGE}) // JpaRepository 패키지 위치 등록
 public class JpaConfiguration{
-    static final String RDS_DOMAIN_PACKAGE = "com.simple.repositories";
-    static final String ENTITY_SCAN_PATH = "com.simple.models";
+    static final String RDS_DOMAIN_PACKAGE = "com.simple.common.repositories";
+    static final String ENTITY_SCAN_PATH = "com.simple.common.models";
 }

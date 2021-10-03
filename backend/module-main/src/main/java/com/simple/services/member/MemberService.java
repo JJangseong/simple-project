@@ -1,9 +1,8 @@
 package com.simple.services.member;
 
 import com.simple.models.member.CreateMemberDto;
-import com.simple.models.member.Member;
+import com.simple.common.models.member.Member;
 import com.simple.models.member.UpdateMemberDto;
-import org.springframework.stereotype.Service;
 
 /**
  * Created by marathoner on 2021/09/20

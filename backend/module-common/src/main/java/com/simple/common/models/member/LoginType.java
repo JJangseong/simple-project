@@ -1,4 +1,4 @@
-package com.simple.models.member;
+package com.simple.common.models.member;
 
 /**
  * Created by marathoner on 2021/09/20

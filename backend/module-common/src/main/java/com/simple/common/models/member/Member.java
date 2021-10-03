@@ -1,6 +1,6 @@
-package com.simple.models.member;
+package com.simple.common.models.member;
 
-import com.simple.models.code.Code;
+import com.simple.common.models.code.Code;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;

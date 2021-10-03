@@ -1,9 +1,9 @@
 package com.simple.mappers.member;
 
-import com.simple.configs.components.DateComponent;
+import com.simple.common.configs.components.DateComponent;
 import com.simple.mappers.EntityMapper;
 import com.simple.models.member.CreateMemberDto;
-import com.simple.models.member.Member;
+import com.simple.common.models.member.Member;
 import org.mapstruct.Mapper;
 
 /**

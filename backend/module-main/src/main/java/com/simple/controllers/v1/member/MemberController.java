@@ -1,7 +1,7 @@
 package com.simple.controllers.v1.member;
 
 import com.simple.models.member.CreateMemberDto;
-import com.simple.models.member.Member;
+import com.simple.common.models.member.Member;
 import com.simple.models.member.UpdateMemberDto;
 import com.simple.services.member.MemberService;
 import lombok.RequiredArgsConstructor;

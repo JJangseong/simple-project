@@ -1,6 +1,7 @@
 package com.simple.models.member;
 
-import com.simple.models.code.Code;
+import com.simple.common.models.code.Code;
+import com.simple.common.models.member.LoginType;
 import lombok.*;
 
 import javax.validation.constraints.Email;

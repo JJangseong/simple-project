@@ -62,3 +62,5 @@ spring:
       org:
         hibernate:
           SQL: debug
+server:
+  port: 8081

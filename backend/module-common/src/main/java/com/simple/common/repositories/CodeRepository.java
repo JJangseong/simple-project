@@ -1,6 +1,6 @@
-package com.simple.repositories;
+package com.simple.common.repositories;
 
-import com.simple.models.code.Code;
+import com.simple.common.models.code.Code;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**

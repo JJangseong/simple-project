@@ -1,1 +1,7 @@
 rootProject.name = 'backend'
+include 'module-common'
+include 'module-main'
+include 'module-file'
+include 'module-mail'
+include 'module-stomp'
+
