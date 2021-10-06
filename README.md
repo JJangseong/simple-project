@@ -15,7 +15,7 @@ cd backend/database; docker-compose up --build
 
 yml 서버에 맞게 실행 필요
 
-푸쉬 테스트
+푸쉬 테스트 왜 안돼!!!!!!!!!!!!!!!!
 
 ## 프론트엔드
 
