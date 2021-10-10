@@ -20,3 +20,7 @@ yml 서버에 맞게 실행 필요
 
 src/types/env.d.ts 참고해서 .env.development && .env.production 만들어서 실행 할 것
 
+## 참고
+
+소셜 로그인 개발 시작
+
