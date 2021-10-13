@@ -23,4 +23,5 @@ src/types/env.d.ts 참고해서 .env.development && .env.production 만들어서
 ## 참고
 
 소셜 로그인 개발 시작
+1. 네이버 로그인 세팅 완료
 
