@@ -1,6 +1,7 @@
 import React from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import Search from 'pages/Search'
+import Room from 'pages/Room'
 import HomeNavigator from './HomeNavigator'
 
 const Tab = createBottomTabNavigator()
@@ -16,7 +17,7 @@ function TabNavigator({}: TabNavigatorProps) {
 		>
 			<Tab.Screen name="Home" component={HomeNavigator} />
 			<Tab.Screen name="Search" component={Search} />
-			<Tab.Screen name="Search1" component={Search} />
+			<Tab.Screen name="Room" component={Room} />
 			<Tab.Screen name="Search2" component={Search} />
 			<Tab.Screen name="Search3" component={Search} />
 		</Tab.Navigator>
