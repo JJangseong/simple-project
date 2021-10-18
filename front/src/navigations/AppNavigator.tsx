@@ -2,10 +2,8 @@ import React, { useState } from 'react'
 import TabNavigator from './TabNavigator'
 import StackNavigator from './StackNavigator'
 
-export type AppNavigatorProps = {}
-
-function AppNavigator({}: AppNavigatorProps) {
-	const [isLogin, setIsLogin] = useState(true)
+function AppNavigator() {
+	const [isLogin, setIsLogin] = useState(false)
 	return isLogin ? <TabNavigator /> : <StackNavigator />
 }
 

@@ -4,11 +4,9 @@ import Login from 'pages/Login'
 
 const Stack = createNativeStackNavigator()
 
-export type StackNavigatorProps = {}
-
-function StackNavigator({}: StackNavigatorProps) {
+function StackNavigator() {
 	return (
-		<Stack.Navigator>
+		<Stack.Navigator screenOptions={{headerShown: false}}>
 			<Stack.Screen name="Login" component={Login} />
 		</Stack.Navigator>
 	)
